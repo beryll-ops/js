@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript" charset="utf-8">
+
+      function weryfikacja(){
+        passwd = getElementById('password').value
+        let length = passwd.length
+        if ((length >= 7) && (/\d/.test(passwd))){
+          document.getElementById('outcome').innerHTML='hasło jest dobre'
+          document.getElementById('outcome').style.color='green'
+        }
+        else if ((length >= 7) && (/\d/.test(passwd))) {
+          document.getElementById('outcome').innerHTML='hasło jest srednie'
+          document.getElementById('outcome').style.color='blue'
+        }
+        else if (length >= 1) {
+          document.getElementById('outcome').innerHTML='hasło jest slabe'
+          document.getElementById('outcome').style.color='yellow'
+        }
+        else if (length == 0) {
+          document.getElementById('outcome').innerHTML='hasła brak'
+          document.getElementById('outcome').style.color='red'
+        }
+      }
+
+    </script>
+  </head>
+  <body>
+    <form class="" action="index.html" method="post">
+      <p><input type="text" name="password" id="password"><br></p>
+      <p><input type="submit" value="wyslij" name="submit" id="button" onClick=weryfikacja()></p>
+    </form>
+    <div id="outcome">
+      <i>wynik </i>
+    </div>
+  </body>
+</html>
